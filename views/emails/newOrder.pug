@@ -1,0 +1,16 @@
+extends base
+
+block emailContent
+  p you have placed a new Order
+
+  div(class="post-card")
+
+    p(class="post-card__content") #{username}
+    div(class="container")
+    each product in cart
+      div(class="post-card")
+        h3 #{product.product.title}
+          p #{product.product.price}
+          p #{product.quantity}
+    div 
+      p #{totalPrice}      
